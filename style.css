@@ -73,7 +73,8 @@ body {
   --shadow-glow: 0 0 20px var(--accent-glow);
 
   /* Anchor offset for sticky nav */
-  --anchor-offset: 260px;
+  --anchor-offset: 280px;
+  scroll-padding-top: var(--anchor-offset);
 }
 
 /* ========================================
@@ -747,7 +748,7 @@ button:focus-visible {
   :root {
     --spacing-xl: 2rem;
     --spacing-lg: 1.5rem;
-    --anchor-offset: 380px;
+    --anchor-offset: 520px;
   }
   
   .site-title {
@@ -882,7 +883,7 @@ button:focus-visible {
   }
   
   :root {
-    --anchor-offset: 420px;
+    --anchor-offset: 620px;
   }
   
   .container {
