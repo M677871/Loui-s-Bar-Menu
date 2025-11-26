@@ -73,7 +73,7 @@ body {
   --shadow-glow: 0 0 20px var(--accent-glow);
 
   /* Anchor offset for sticky nav */
-  --anchor-offset: 280px;
+  --anchor-offset: 150px;
   scroll-padding-top: var(--anchor-offset);
 }
 
@@ -261,22 +261,24 @@ button:focus-visible {
 .nav-shell {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .nav-list {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.25rem;
   padding: 0.35rem;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background: rgba(15, 15, 15, 0.95);
   border-radius: 999px;
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-sm);
-  overflow: visible;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
 }
 
@@ -285,7 +287,7 @@ button:focus-visible {
 }
 
 .nav-list li {
-  display: inline-block;
+  display: inline-flex;
 }
 
 .nav-list a {
@@ -748,7 +750,7 @@ button:focus-visible {
   :root {
     --spacing-xl: 2rem;
     --spacing-lg: 1.5rem;
-    --anchor-offset: 520px;
+    --anchor-offset: 170px;
   }
   
   .site-title {
@@ -763,7 +765,7 @@ button:focus-visible {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: var(--spacing-sm);
   }
   
@@ -783,41 +785,41 @@ button:focus-visible {
     max-height: none;
     opacity: 1;
     transform: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    align-items: stretch;
-    gap: 0.75rem 0.5rem;
-    padding: var(--spacing-sm);
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    padding: 0.35rem;
     width: 100%;
-    max-width: 720px;
-    margin: 0 auto;
+    margin: 0;
     background: rgba(15, 15, 15, 0.95);
-    border-radius: var(--radius-md);
+    border-radius: 999px;
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow-sm);
-    overflow: visible;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
   
   .nav-list.nav-open {
     max-height: none;
-    overflow: visible;
-    padding: var(--spacing-sm);
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.35rem;
     opacity: 1;
     transform: none;
   }
   
   .nav-list li {
-    width: 100%;
+    width: auto;
   }
   
   .nav-list a {
-    width: 100%;
-    border-radius: var(--radius-md);
-    padding: 0.85rem var(--spacing-md);
-    border: 1px solid var(--border-color);
+    width: auto;
+    border-radius: 999px;
+    padding: 0.7rem 1.2rem;
+    border: 1px solid transparent;
     justify-content: center;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   
   .nav-list a:active {
@@ -883,9 +885,19 @@ button:focus-visible {
   }
   
   :root {
-    --anchor-offset: 620px;
+    --anchor-offset: 190px;
   }
-  
+
+  .nav-list {
+    gap: 0.4rem;
+    padding: 0.3rem;
+  }
+
+  .nav-list a {
+    padding: 0.65rem 1rem;
+    font-size: 0.8rem;
+  }
+
   .container {
     padding: 0 var(--spacing-sm);
   }
