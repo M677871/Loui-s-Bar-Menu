@@ -71,6 +71,9 @@ body {
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 20px var(--accent-glow);
+
+  /* Anchor offset for sticky nav */
+  --anchor-offset: 260px;
 }
 
 /* ========================================
@@ -359,7 +362,7 @@ button:focus-visible {
   transition: transform var(--transition-base), box-shadow var(--transition-base);
   border: 1px solid var(--border-color);
   position: relative;
-  scroll-margin-top: 260px;
+  scroll-margin-top: var(--anchor-offset, 260px);
 }
 
 .menu-section::before {
@@ -744,6 +747,7 @@ button:focus-visible {
   :root {
     --spacing-xl: 2rem;
     --spacing-lg: 1.5rem;
+    --anchor-offset: 380px;
   }
   
   .site-title {
@@ -875,6 +879,10 @@ button:focus-visible {
 @media (max-width: 480px) {
   html {
     font-size: 14px;
+  }
+  
+  :root {
+    --anchor-offset: 420px;
   }
   
   .container {
